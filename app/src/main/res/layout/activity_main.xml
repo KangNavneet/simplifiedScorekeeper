@@ -7,11 +7,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
+    android:background="@drawable/new_background"
+
 
     >
     <TableLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:id="@+id/scrollViewBackground"
+       >
         <TableRow
             android:gravity="center"
             android:weightSum="2"
@@ -25,24 +29,15 @@
                 android:text="CRICKET"
                 android:textSize="45dp"
                 android:padding="15dp"
-                android:textColor="#f00"
                 android:fontFamily="cursive"
                 android:layout_weight="1"
-                />
-
-            <ImageView
-                android:layout_width="150dp"
-                android:layout_height="100dp"
-                android:src="@drawable/cricket"
-                android:layout_weight="1"
-                android:padding="15dp"
                 />
         </TableRow>
 
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:gravity="center"
             android:padding="15dp"
             >
@@ -58,7 +53,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:padding="2dp"
+                    android:padding="1dp"
                     android:orientation="vertical"
                     android:layout_weight="1">
 
@@ -86,8 +81,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="#800080"
-                        android:textColor="#fff"
-                        android:fontFamily="monospace"
                         android:gravity="center"
                         android:text="👇ADD RUN" />
 
@@ -104,7 +97,8 @@
                             android:layout_height="match_parent"
                             android:id="@+id/team_a_decrease"
                             android:layout_weight="1"
-                            android:text="-" />
+                            android:text="-"
+                            />
 
 
                         <Button
@@ -121,9 +115,11 @@
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="1dp"
                     android:orientation="vertical"
                     android:layout_weight="1"
+
                     >
 
                     <TextView
@@ -147,14 +143,14 @@
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:text="👉Team B Score" />
+
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="#800080"
-                        android:textColor="#fff"
-                        android:fontFamily="monospace"
                         android:gravity="center"
                         android:text="👇ADD RUN" />
+
 
 
                     <LinearLayout
@@ -191,7 +187,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:padding="10dp"
+            android:padding="4dp"
 
             >
 
@@ -201,6 +197,7 @@
                 android:layout_height="wrap_content"
                 android:padding="40dp"
 
+
                 android:checkedButton="@id/score_1"
                 android:gravity="center">
 
@@ -208,6 +205,7 @@
                     android:id="@+id/score_1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+
                     android:text="1 Score" />
 
                 <RadioButton
@@ -221,10 +219,55 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="6 Score" />
+
+
+
             </RadioGroup>
 
 
 
+
+        </TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="15dp"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#800080"
+                android:gravity="center"
+                android:textSize="18dp"
+                android:text="👇Change Theme After Every 20%-Incomplete" />
+
+
+            <SeekBar
+                android:id="@+id/seekBar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:progressDrawable="@drawable/custom_seekbar"
+                android:padding="1dp"
+                android:layout_margin="17dp"
+
+                android:thumb="@drawable/custom_thumb"
+                />
+
+            <TextView
+                android:id="@+id/themePercent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#800080"
+                android:gravity="center"
+                android:visibility="gone"
+                />
+            </LinearLayout>
 
         </TableRow>
 

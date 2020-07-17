@@ -233,9 +233,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="#800080"
-                    android:gravity="center"
-                    android:textSize="18dp"
-                    android:text="👇Change Theme After Every 20%-Incomplete" />
+                    android:textSize="14dp"
+                    android:text="👇Incomplete Change Theme After 20%" />
 
 
                 <SeekBar

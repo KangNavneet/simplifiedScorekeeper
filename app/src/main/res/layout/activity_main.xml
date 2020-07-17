@@ -24,10 +24,6 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:text="CRICKET"
-                android:textSize="45dp"
-                android:padding="15dp"
-                android:textColor="#f00"
-                android:fontFamily="cursive"
                 android:layout_weight="1"
                 />
 
@@ -66,21 +62,17 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:textStyle="bold"
                         android:text="Team A" />
 
                     <TextView
                         android:id="@+id/teamAScore"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:gravity="center"
                         android:text="0" />
                     <Button
 
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:gravity="center"
                         android:text="👉Team A Score " />
 
                     <TextView
@@ -132,21 +124,18 @@
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:text="Team B"
-                        android:textStyle="bold"
                         />
 
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:gravity="center"
                         android:id="@+id/teamBScore"
                         android:text="0" />
                     <Button
                         android:id="@+id/active_teamB"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:gravity="center"
                         android:text="👉Team B Score" />
                     <TextView
                         android:layout_width="match_parent"

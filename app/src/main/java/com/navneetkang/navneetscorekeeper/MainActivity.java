@@ -3,23 +3,15 @@ package com.navneetkang.navneetscorekeeper;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.graphics.Color;
-import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
-import android.widget.ScrollView;
-import android.widget.SeekBar;
-import android.widget.TableLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-
-    SeekBar seek;
-
     int countA=0;
     int countB=0;
     int scoreA=0;
@@ -31,91 +23,14 @@ public class MainActivity extends AppCompatActivity {
     TextView result;
     TextView setRules;
     RadioGroup rg;
-    MediaPlayer mp;
-    TableLayout l1;
-    TextView themepercent;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        l1= findViewById(R.id.scrollViewBackground);
-
-        seek=findViewById(R.id.seekBar);
-        themepercent=findViewById(R.id.themePercent);
 
 
-
-
-        seek.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
-            @Override
-            public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
-
-                themepercent.setVisibility(View.VISIBLE);
-                themepercent.setText(i+"");
-                Toast.makeText(getApplicationContext(),i+"",Toast.LENGTH_SHORT).show();
-
-                if(i>=0 && i<20)
-                {
-                    if(i==1 || i==10) {
-                        mp = MediaPlayer.create(getApplicationContext(), R.raw.a);
-                        mp.start();
-                        //l1.setBackgroundColor(Color.parseColor("#f00"));
-
-                    }
-
-
-
-                }
-                else if(i>=20 && i<40)
-                {
-                    if(i==20 || i==30) {
-                        mp = MediaPlayer.create(getApplicationContext(), R.raw.b);
-                        mp.start();
-                    }
-                    if(themepercent.equals("20"))
-                    {
-                        l1.setBackgroundColor(Color.parseColor("#f00"));
-                    }
-
-                }
-                else if(i>=40 && i<60)
-                {
-                    if(i==40 || i==50) {
-                        mp = MediaPlayer.create(getApplicationContext(), R.raw.c);
-                        mp.start();
-                    }
-                }
-                else if(i>=60 && i<80)
-                {
-                    if(i==60 || i==70) {
-                        mp = MediaPlayer.create(getApplicationContext(), R.raw.d);
-                        mp.start();
-                    }
-
-                }
-                else {
-                    if (i == 80 || i==90) {
-                        mp = MediaPlayer.create(getApplicationContext(), R.raw.e);
-                        mp.start();
-
-                    }
-                }
-
-            }
-
-            @Override
-            public void onStartTrackingTouch(SeekBar seekBar) {
-
-
-            }
-
-            @Override
-            public void onStopTrackingTouch(SeekBar seekBar) {
-
-            }
-        });
 
         final Button activeTeamB=findViewById(R.id.active_teamB);
 
@@ -140,7 +55,6 @@ public class MainActivity extends AppCompatActivity {
         increaseScoreA.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                buttonClick();
                 selectRadio();
                 scoreA+=score;
                 update();
@@ -150,7 +64,6 @@ public class MainActivity extends AppCompatActivity {
         increaseScoreB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                buttonClick();
                 selectRadio();
                 scoreB+=score;
                 update();
@@ -160,7 +73,6 @@ public class MainActivity extends AppCompatActivity {
         decreaseScoreA.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                buttonClick();
                 selectRadio();
                 scoreA-=score;
                 update();
@@ -172,7 +84,6 @@ public class MainActivity extends AppCompatActivity {
         decreaseScoreB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                buttonClick();
                 selectRadio();
               scoreB-=score;
 
@@ -193,12 +104,6 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void buttonClick()
-    {
-        mp=MediaPlayer.create(getApplicationContext(),R.raw.button_press);
-        mp.start();
-    }
-
     public void update()
     {
 
@@ -209,11 +114,9 @@ public class MainActivity extends AppCompatActivity {
 
     public void selectRadio()
     {
-
         switch(rg.getCheckedRadioButtonId())
         {
             case R.id.score_1:
-
                 score=1;
                 break;
 
